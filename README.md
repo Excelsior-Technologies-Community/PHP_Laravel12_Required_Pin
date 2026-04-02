@@ -528,6 +528,11 @@ Register  →  Login  →  Visit /dashboard
 
 ---
 
+<img width="1910" height="890" alt="Screenshot 2026-03-26 171322" src="https://github.com/user-attachments/assets/d8d3f3d4-2255-4feb-8614-a4b9e86e08e1" />
+<img width="1919" height="842" alt="Screenshot 2026-03-26 171333" src="https://github.com/user-attachments/assets/b01a34d3-a7e6-48c2-a7c1-af6cc0ff7361" />
+<img width="1914" height="692" alt="Screenshot 2026-03-26 171351" src="https://github.com/user-attachments/assets/ade94606-1c76-474a-ab11-ccde6f44279d" />
+
+
 ## Project Folder Structure
 
 ```
