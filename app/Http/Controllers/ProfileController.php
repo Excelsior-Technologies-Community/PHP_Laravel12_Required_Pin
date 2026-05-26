@@ -26,6 +26,7 @@ class ProfileController extends Controller
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
+<<<<<<< HEAD
         // ✅ ADD THIS: PIN validation
         $request->validate([
             '_pin' => ['required', 'digits:6'], // only 6 digit number
@@ -44,6 +45,9 @@ class ProfileController extends Controller
         }
 
         // ✅ Existing logic
+=======
+        // Only profile update logic
+>>>>>>> main
         $request->user()->fill($request->validated());
 
         if ($request->user()->isDirty('email')) {
@@ -52,7 +56,8 @@ class ProfileController extends Controller
 
         $request->user()->save();
 
-        return Redirect::route('profile.edit')->with('status', 'profile-updated');
+        return Redirect::route('profile.edit')
+            ->with('status', 'profile-updated');
     }
 
     /**
@@ -71,6 +76,7 @@ class ProfileController extends Controller
         $user->delete();
 
         $request->session()->invalidate();
+
         $request->session()->regenerateToken();
 
         return Redirect::to('/');
