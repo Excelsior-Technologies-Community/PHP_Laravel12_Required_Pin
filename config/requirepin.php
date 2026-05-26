@@ -4,7 +4,7 @@ return [
     /**
      * int - Default pin
      */
-    'default' => '0000',
+    'default' => '123456',
     /**
      * bool - Allow a user to authenticate using the default pin
      */
@@ -29,11 +29,11 @@ return [
     /**
      * int - Max chars for pin
      */
-    'max' => 4,
+    'max' => 6,
     /**
      * int - Min chars for pin
      */
-    'min' => 4,
+    'min' => 6,
     /**
      * int|boolean - Check all or a specified number of
      * previous pins
@@ -42,7 +42,7 @@ return [
     /**
      * int - Number of previous pins to check
      */
-    'number' => 4,
+    'number' => 6,
     /**
      * int - Pin authentication rate limit
      */

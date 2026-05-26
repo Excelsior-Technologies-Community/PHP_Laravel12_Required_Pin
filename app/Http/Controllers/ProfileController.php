@@ -26,24 +26,7 @@ class ProfileController extends Controller
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
-        // ✅ ADD THIS: PIN validation
-        $request->validate([
-            '_pin' => ['required', 'digits:6'], // only 6 digit number
-        ]);
-
-        // 👉 Optional: check correct PIN (example)
-        $enteredPin = $request->_pin;
-
-        // ⚠️ Replace this with DB value later
-        $correctPin = "123456";
-
-        if ($enteredPin !== $correctPin) {
-            return back()->withErrors([
-                '_pin' => 'Invalid PIN'
-            ])->withInput();
-        }
-
-        // ✅ Existing logic
+        // Only profile update logic
         $request->user()->fill($request->validated());
 
         if ($request->user()->isDirty('email')) {
@@ -52,7 +35,8 @@ class ProfileController extends Controller
 
         $request->user()->save();
 
-        return Redirect::route('profile.edit')->with('status', 'profile-updated');
+        return Redirect::route('profile.edit')
+            ->with('status', 'profile-updated');
     }
 
     /**
@@ -71,6 +55,7 @@ class ProfileController extends Controller
         $user->delete();
 
         $request->session()->invalidate();
+
         $request->session()->regenerateToken();
 
         return Redirect::to('/');
